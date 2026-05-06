@@ -18,16 +18,25 @@ class PostViewModel : ViewModel() {
     var posts by mutableStateOf<List<Post>>(emptyList())
         private set  //only PostViewModel can change 'posts'
 
+    var isLoading by mutableStateOf(false)
+        private set
 
     init {
         viewModelScope.launch {
-            val fetchedPosts = repository.getPosts()
+            isLoading = true
+            try {
+                val fetchedPosts = repository.getPosts()
 
-            // Updating the State
-            // any update to 'posts' will trigger
-            // a recomposition of any Composable
-            // that read this state
-            posts= fetchedPosts
+                // Updating the State
+                // any update to 'posts' will trigger
+                // a recomposition of any Composable
+                // that read this state
+                posts = fetchedPosts
+            } catch (e: Exception) {
+                // optional: handle error
+            } finally {
+                isLoading = false
+            }
         }
     }
 
