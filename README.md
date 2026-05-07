@@ -49,6 +49,6 @@ UI (Compose) → ViewModel → Repository → Retrofit API + Room DB
 
 ## Screenshots
 
-<img width="1080" height="2424" alt="Screenshot_1778129469" src="https://github.com/user-attachments/assets/c5037a67-5eb4-47bc-b489-59bda7e62820" />
+<img width="280" height="600" alt="Screenshot_1778129469" src="https://github.com/user-attachments/assets/c5037a67-5eb4-47bc-b489-59bda7e62820" />
 
 
